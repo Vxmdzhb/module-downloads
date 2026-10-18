@@ -1,13 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace AstrX\Controller;
+namespace AstrX\Downloads\Controller;
 
 use AstrX\I18n\Translator;
 use AstrX\Result\DiagnosticsCollector;
 use AstrX\Result\Result;
-use AstrX\Site\DefaultTemplateContext;
+use AstrX\Template\TemplateVars;
 use PDO;
+use AstrX\Kernel\AbstractController;
 
 /**
  * Public signed-release / download-verification page (/downloads).
@@ -24,7 +25,7 @@ final class DownloadsController extends AbstractController
 {
     public function __construct(
         DiagnosticsCollector                    $collector,
-        private readonly DefaultTemplateContext $ctx,
+        private readonly TemplateVars $ctx,
         private readonly PDO                     $pdo,
         private readonly Translator             $t,
     ) {
