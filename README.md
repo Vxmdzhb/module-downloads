@@ -2,6 +2,8 @@
 
 Signed release downloads page with its admin editor — the **Downloads** module of [AstrX](https://github.com/Vxmdzhb/astrx).
 
+![A signed release manifest, verified on the page](docs/screenshot.png)
+
 - Module key: `downloads` (switch it on in the site's `resources/config/Modules.config.php`)
 - Pages: `admin_downloads`, `downloads`
 - Requires: `astrx/cms`, `astrx/framework`, `astrx/library`
