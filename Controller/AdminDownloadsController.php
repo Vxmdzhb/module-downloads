@@ -21,13 +21,13 @@ use AstrX\Downloads\DownloadsPermission;
 /**
  * Admin editor for the signed release manifest (/admin-downloads).
  *
- * The operator pastes a release manifest (a list of file → SHA-256), the ED25519
- * PUBLIC key, and the detached signature — all produced offline, the private key
- * never touching the server. The public /downloads page then verifies the
- * signature server-side and shows VALID / INVALID / unsigned. Pubkey and sig are
- * validated here as base64 of the exact ED25519 sizes so a paste error is caught
- * at save time, not silently rendered as "invalid" to every visitor. ADMIN-only
- * (ADMIN_DOWNLOADS). Stored in the `site_config` KV (manifest_* keys).
+ * The operator pastes a release manifest (file → SHA-256), the Ed25519
+ * public key and the detached signature, all made offline, so the private key
+ * never touches the server. The public /downloads page checks the signature
+ * on the server and shows VALID, INVALID or unsigned. The key and signature
+ * are checked here (base64 of the exact Ed25519 sizes), so a paste error is
+ * caught when saving rather than shown to visitors as "invalid". Admins only
+ * (ADMIN_DOWNLOADS). Stored in `site_config` (manifest_* keys).
  */
 final class AdminDownloadsController extends AbstractController
 {
