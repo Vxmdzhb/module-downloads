@@ -1,6 +1,7 @@
 {
     "name": "astrx/module-downloads",
     "description": "Signed release downloads page with its admin editor",
+    "license": "LicenseRef-DoWhatever",
     "type": "astrx-module",
     "keywords": [
         "astrx",
